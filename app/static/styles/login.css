@@ -1,0 +1,154 @@
+body {
+  background: #7a0b4c;
+  font-family: font-family: 'Courier New', monospace;
+}
+
+.login-form {
+  background: #fff;
+  width: 500px;
+  margin: 65px auto;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  border-radius: 4px;
+  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
+}
+.login-form h1 {
+  text-align: center;
+  padding: 35px 35px 0 35px;
+  font-weight: 300;
+  font-family: 'Courier New', monospace;
+}
+.login-form .content {
+  padding: 35px;
+  text-align: center;
+}
+.login-form .input-field {
+  padding: 12px 5px;
+}
+.login-form .input-field input {
+  font-size: 16px;
+  display: block;
+  font-family: 'Courier New', monospace;
+  width: 100%;
+  padding: 10px 1px;
+  border: 0;
+  border-bottom: 1px solid #1e0222;
+  outline: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+.login-form .input-field input::-webkit-input-placeholder {
+  text-transform: uppercase;
+}
+.login-form .input-field input::-moz-placeholder {
+  text-transform: uppercase;
+}
+.login-form .input-field input:-ms-input-placeholder {
+  text-transform: uppercase;
+}
+.login-form .input-field input::-ms-input-placeholder {
+  text-transform: uppercase;
+}
+.login-form .input-field input::placeholder {
+  text-transform: uppercase;
+}
+.login-form .input-field input:focus {
+  border-color: rgb(37, 5, 15);
+}
+.login-form a.link {
+  text-decoration: none;
+  color: #747474;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-top: 20px;
+}
+.login-form .action {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+}
+
+.login-form .form{
+  padding: 35px;
+  text-align: center;
+}
+.login-form .action button {
+  width: 250px;
+  height: 100;
+  border: none;
+  padding: 18px;
+  font-family: 'Courier New', monospace;
+  cursor: pointer;
+  text-transform: uppercase;
+  background: #d18ec3;
+  color: rgb(7, 1, 1);
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 0;
+  letter-spacing: 0.2px;
+  outline: 0;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+.login-form .action button:hover {
+  background: #5a054c;
+  color: #fff;
+}
+
+.login-form a.link {
+  width: 465px;
+  height: 100;
+  border: none;
+  text-align: center;
+  padding: 18px;
+  font-family: 'Courier New', monospace;
+  cursor: pointer;
+  text-transform: uppercase;
+  background: #d18ec3;
+  color: rgb(7, 1, 1);
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 0;
+  letter-spacing: 0.2px;
+  outline: 0;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.login-form a.link a:hover{
+  background: #5a054c;
+  color: #fff;
+}
+
+
+.error {
+  color: rgb(8, 1, 1);
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.log {
+  width: 500px;
+  height: 100;
+  border: none;
+  padding: 18px;
+  font-family: 'Courier New', monospace;
+  cursor: pointer;
+  text-transform: uppercase;
+  background: #d18ec3;
+  color: rgb(7, 1, 1);
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 0;
+  letter-spacing: 0.2px;
+  outline: 0;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+.log {
+  background: #5a054c;
+  color: #fff;
+}

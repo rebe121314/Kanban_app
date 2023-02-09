@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Rebeca's Kanban Board</title>
+    <link href= '{{url_for('static', filename="styles/custom.css")}}' rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+      <div class="page">
+        <a href="{{ url_for('logout') }}" class="link">Log out</a>
+          <div class="rectangle">
+            {% if use_now %}
+              <strong class="head_txt">{{use_now}}'s Kanban Board</strong>
+            {% else %}
+              <strong class="head_txt">Kanban Board</strong>
+            {% endif %}
+          </div>
+          <div>
+            <form class="form1" method="POST" action='/add'>
+            <ul>
+              <li>
+                <input type="text" name="title" required placeholder="Plase add a new task :)">
+              </li>
+              <li>
+                <button class="add_item add_item1">Submit</button>
+              </li>
+            </ul>
+          </form>
+        </div>
+        <p></p>
+          <div class="board">
+              <div class="block" id="todo">
+                  <div class="section_title"> 
+                    <strong>To do</strong>
+                  </div>
+                {% for task in todo %}
+                <div class="whole_task" id="todo">
+                    <div class="item-input"> {{task.title}}</div>
+                    <form class ="form2" method="POST" action="./delete">
+                        <input type="hidden" name="id" value="{{task.id}}">
+                        <button class="delete_item delete_item1">Delete</button>
+                    </form>
+                    <form class ="form2" method="POST" action="./update_next">
+                        <input type="hidden" name="id" value="{{task.id}}">
+                        <button class="eddit_item edit_item1">&#8250;</button>
+                    </form>
+                </div>
+                {% endfor %}
+              </div>
+              <div class="block" id="progress">
+                <div class="section_title"> 
+                    <strong>In progress</strong>
+                </div>
+                {% for task in inprogress %}
+                <div class="whole_task" id="progress">
+                  <form class ="form2" method="POST" action="./update_pre">
+                    <input type="hidden" name="id" value="{{task.id}}">
+                    <button class="eddit_item edit_item1">&#8249;</button>
+                  </form>
+                    <div class="item-input"> {{task.title}}</div>
+                    <form class ="form2" method="POST" action="./delete">
+                        <input type="hidden" name="id" value="{{task.id}}">
+                        <button class="delete_item delete_item1">Delete</button>
+                    </form>
+                    <form class ="form2" method="POST" action="./update_next">
+                      <input type="hidden" name="id" value="{{task.id}}">
+                      <button class="eddit_item edit_item1">&#8250;</button>
+                    </form>
+                </div>
+                  {% endfor %}
+              </div>
+              <div class="block" id="done">
+                <div class="section_title"> 
+                    <strong>Done :)</strong>
+                </div>
+                {% for task in done %}
+                  <div class="whole_task" id="done">
+                    <form class ="form2" method="POST" action="./update_pre">
+                      <input type="hidden" name="id" value="{{task.id}}">
+                      <button class="eddit_item edit_item1">&#8249;</button>
+                    </form>
+                    <div class="item-input"> {{task.title}} </div>
+                    <form class ="form2" method="POST" action="./delete">
+                        <input type="hidden" name="id" value="{{task.id}}">
+                        <button class="delete_item delete_item1">Delete</button>
+                    </form>
+                </div>
+                {% endfor %}
+              </div>
+          </div>
+      </div>
+  </body>
+</html>

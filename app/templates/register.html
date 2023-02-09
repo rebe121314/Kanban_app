@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <link href= '../static/styles/login.css' rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="login-form">
+  <form method="POST" action= '''>
+    <h1><strong>Register</strong></h1>
+    <div class="content">
+        {{ form.hidden_tag() }}
+      <div class="input-field">
+        {{ form.username }}
+      </div>
+      <div class="input-field">
+        {{ form.password }}
+      </div>
+      {% if error %}
+      <p class="error"> {{ error }}> </p>
+      {% endif %}
+    </div>
+    <div class="action">
+      {{ form.submit(class = 'log') }} 
+  </div>
+</form>
+<a href="{{ url_for('login') }}" class="link">Log In</a>
+</div>
+</body>
+</html>
